@@ -1,0 +1,194 @@
+
+@media (max-width: 1350px){
+    .main-content .box-stats{
+        padding: 15px 0;
+        padding-left: 40px;
+    }
+}
+@media (max-width: 1200px){
+    .main-content-post .meta span:nth-child(3){
+        display: block;
+    }
+    .main-content-post h1{
+        font-size: 30px;
+    }
+    .main-content .box-stats{
+        padding: 15px 0;
+        padding-left: 15px;
+    }
+    .main-content .box-stats p{
+        font-size: 14px;
+    }
+    .main-content .box-stats p::before{
+        width: 18px;
+        left: -35px;
+    }
+    
+    
+   
+    
+}
+@media (max-width: 992px){
+    #navbar-collapse-toggle > ul{
+        display: none;
+    }
+    header.menyu-responsive .toggle-menu{
+        display: block;
+    }
+    #showSwitcher{
+        display: none;
+    }
+    .section{
+        overflow-y: scroll;
+    }
+    .section .color-bgr{
+        display: none;
+    }
+    .section .parent{
+        text-align: center;
+    }
+    .section .parent .col-5{
+        height: auto;
+    }
+    .section .parent img{
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        border: 5px solid #444 ;
+        position: relative;
+        top: 150px;
+        left: 0;
+    }
+    .section .hi-there{
+        padding: 0px 120px;
+    }
+    .section .hi-there h6{
+        font-size: 18px;
+        margin: 0;
+    }
+    p{
+        font-size: 14px;
+    }
+    .section .hi-there h1{
+        font-size: 35px;
+    }
+    .main-content-portfolio .parent-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .main-content-post h1{
+        font-size: 25px;
+    }
+    .main-content-post .meta{
+        font-size: 13px;
+    }
+    .main-content .box-stats p{
+        font-size: 16px;
+    }
+    .main-content .box-stats{
+        padding-left: 45px;
+    }
+    .main-content .box-stats p::before{
+        width: 25px;
+        left: -45px;
+    }
+    
+    
+
+}
+@media (max-width: 768px){
+    .section .parent img{
+        width: 200px;
+        height: 200px;
+        top: 110px;
+    }
+    .section .hi-there h6{
+        font-size: 14px;
+        margin: 0;
+    }
+    p{
+        font-size: 12px;
+    }
+    .section .hi-there h1{
+        font-size: 25px;
+    }
+    header.menyu-responsive ul.ul-2 a{
+        font-size: 20px;
+    }
+    header.menyu-responsive ul.ul-2 svg{
+        width: 20px;
+        height: 20px;
+    }
+    header.menyu-responsive ul.ul-2 a span{
+        padding-left: 15px;
+    }
+    .main-content .img-mobile{
+        display: block;
+        width: 100%;
+        border-radius: 50%;
+    }
+    .main-content .personal-info{
+        text-align: center;
+    }
+    section.title-section h1{
+        font-size: 25px;
+        text-align: start;
+    }
+    section.title-section .title-bg {
+        display: none;
+    }
+    section.title-section{
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        background-color: #222;
+        padding: 10px 40px;
+    }
+    header.menyu-responsive .toggle-menu{
+        top: -25px;
+        right: 0;
+    }
+    [class*='main-content']{
+        padding-top: 100px;
+    }
+    .main-content-post h1{
+        font-size: 20px;
+    }
+    .main-content .box-stats p{
+        font-size: 14px;
+    }
+    .main-content .box-stats{
+        padding-left: 15px;
+    }
+    .main-content .box-stats p::before{
+        width: 18px;
+        left: -25px;
+    }
+    
+    
+}
+@media (max-width: 576px){
+    .main-content-portfolio .parent-grid {
+        grid-template-columns: 1fr;
+    }
+    .section .hi-there{
+        padding: 0 20px;
+    }
+    .main-content-contact .contactform{
+        text-align: center;
+    }
+    .section{
+        min-height: 110vh;
+    }
+    .section .parent .col-5{
+        height: 0;
+    }
+    .section .parent img{
+        position: relative;
+        top: 70px;
+    }
+    .section .hi-there{
+        margin-top: 0;
+        padding-top: 0;
+    } 
+}
