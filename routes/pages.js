@@ -15,6 +15,6 @@ router.get('/about', getAboutPage)
 router.get('/contact', getContactPage)
 router.get('/portfolio', getPortfolioPage)
 router.get('/blog', getBlogPage)
-router.get('/blog-post', getBlogPostPage)
+router.get('/:id', getBlogPostPage)
 
 module.exports = router

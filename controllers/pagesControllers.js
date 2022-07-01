@@ -1,3 +1,4 @@
+const BlogPost = require('../model/blogModel')
 
 const getHomePage = (req,res) => {
     res.render('home', {
@@ -19,14 +20,21 @@ const getPortfolioPage = (req,res) => {
         url: process.env.URL 
     })
 }
-const getBlogPage = (req,res) => {
+const getBlogPage = async(req,res) => {
+    const BlogDataDB = await BlogPost.find().lean()
+
     res.render('blog/blog', {
-        url: process.env.URL 
+        url: process.env.URL,
+        BlogData: BlogDataDB
     })
 }
-const getBlogPostPage = (req,res) => {
+const getBlogPostPage = async(req,res) => {
+    const id = req.params.id
+    const BlogPostDB = await BlogPost.findOne({_id:id}).lean()
+    
     res.render('blog/blog-post', {
-        url: process.env.URL 
+        url: process.env.URL ,
+        BlogPostDB
     })
 }
 

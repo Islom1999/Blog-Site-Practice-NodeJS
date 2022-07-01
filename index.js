@@ -2,15 +2,18 @@ const express = require('express')
 const { engine } = require('express-handlebars')
 const path = require('path')
 const env = require('dotenv')
+const connectDB = require('./config/configDb')
 
 const app = express()
 
 env.config() 
 
-app.use(express.json())
-app.use(express.urlencoded({extended: false}))
+connectDB()
 
-app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.json())
+app.use(express.urlencoded({extended: false}));
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.engine('.hbs', engine({extname: '.hbs'}));
 app.set('view engine', 'hbs');
