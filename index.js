@@ -19,6 +19,7 @@ app.engine('.hbs', engine({extname: '.hbs'}));
 app.set('view engine', 'hbs');
 app.set('views', './views');
 
+app.use('/admin', require('./routes/adminRoutes'))
 app.use('/', require('./routes/pages'))
 
 

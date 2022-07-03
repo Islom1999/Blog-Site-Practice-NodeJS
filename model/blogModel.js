@@ -7,11 +7,19 @@ const BlogPostModel = new mongoose.Schema({
     },
     image: {
         type: 'string',
-        required: true,
+        required: true,  
     },
     descr: {
         type: 'string',
         required: true,
+    },
+    updated_at: {
+        type: Date,
+        default: Date.now()
+    },
+    created_at: {
+        type: Date,
+        default: Date.now()
     }
 })
 

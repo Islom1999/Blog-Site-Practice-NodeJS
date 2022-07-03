@@ -17,23 +17,22 @@ const getContactPage = (req,res) => {
 }
 const getPortfolioPage = (req,res) => {
     res.render('portfolio', {
-        url: process.env.URL 
+        url: process.env.URL  
     })
 }
 const getBlogPage = async(req,res) => {
-    const BlogDataDB = await BlogPost.find().lean()
+    const BlogDataDB = await BlogPost.find({}).lean()
 
     res.render('blog/blog', {
         url: process.env.URL,
         BlogData: BlogDataDB
     })
-}
+} 
 const getBlogPostPage = async(req,res) => {
-    const id = req.params.id
-    const BlogPostDB = await BlogPost.findOne({_id:id}).lean()
-    
+
+    const BlogPostDB = await BlogPost.findById(req.params.id).lean() 
     res.render('blog/blog-post', {
-        url: process.env.URL ,
+        url: process.env.URL , 
         BlogPostDB
     })
 }
