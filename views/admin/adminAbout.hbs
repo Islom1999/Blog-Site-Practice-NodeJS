@@ -17,20 +17,20 @@
                         </div>
                         <div class="col-6">
                             <ul class="about-list">
-                                <li> <span class="title">first name :</span> <span class="value">Steve</span> </li>
-                                <li> <span class="title">last name :</span> <span class="value">Milner</span> </li>
-                                <li> <span class="title">Age :</span> <span class="value">27 Years</span> </li>
-                                <li> <span class="title">Nationality :</span> <span class="value">Tunisian</span> </li>
-                                <li> <span class="title">Freelance :</span> <span class="value">Available</span> </li>
+                                <li> <span class="title">first name :</span> <span class="value">{{AboutDB.personaInfo.firstName}}</span> </li>
+                                <li> <span class="title">last name :</span> <span class="value">{{AboutDB.personaInfo.lastName}}</span> </li>
+                                <li> <span class="title">Age :</span> <span class="value">{{AboutDB.personaInfo.age}} Years</span> </li>
+                                <li> <span class="title">Nationality :</span> <span class="value">{{AboutDB.personaInfo.national}}</span> </li>
+                                <li> <span class="title">Freelance :</span> <span class="value">{{AboutDB.personaInfo.freelance}}</span> </li>
                             </ul>
                         </div>
                         <div class="col-6">
                             <ul class="about-list">
-                                <li> <span class="title">Address :</span> <span class="value">Tunis</span> </li>
-                                <li> <span class="title">phone :</span> <span class="value">+21621184010</span> </li>
-                                <li> <span class="title">Email :</span> <span class="value">you@mail.com</span> </li>
-                                <li> <span class="title">Skype :</span> <span class="value">steve.milner</span> </li>
-                                <li> <span class="title">langages :</span> <span class="value">French, English</span> </li>
+                                <li> <span class="title">Address :</span> <span class="value">{{AboutDB.personaInfo.address}}</span> </li>
+                                <li> <span class="title">phone :</span> <span class="value">{{AboutDB.personaInfo.phone}}</span> </li>
+                                <li> <span class="title">Email :</span> <span class="value">{{AboutDB.personaInfo.email}}</span> </li>
+                                <li> <span class="title">Skype :</span> <span class="value">{{AboutDB.personaInfo.skype}}</span> </li>
+                                <li> <span class="title">langages :</span> <span class="value">{{AboutDB.personaInfo.lang}}</span></li>
                             </ul>
                         </div>
                         <div class="col-12">
@@ -70,99 +70,85 @@
 
             <hr>
 
+            <!--  -->
             <div class="parent skills">
                 <div class="col-12">
                     <h3 class="my-skills">My Skills</h3>
                 </div>
                 <div class="col-3 col-md-6">
                     <div class="skill">
-                        <span class="skill-number">75%</span>
-                        <div class="slice">
-                            <div class="bar color-bg"></div>
-                            <div class="fill color-bg fill-1"></div>
-                            <div class="slice-item"></div>
-                        </div>
+                        <div class="number">75%</div>
+                        <div class="bar"></div>
+                        <div class="bar-rotate"></div>
+                        <div class="bar-circle"></div>
                     </div>
                     <h6 class="">HTML</h6>
                 </div>
                 <div class="col-3 col-md-6">
                     <div class="skill">
-                        <span class="skill-number">80%</span>
-                        <div class="slice">
-                            <div class="bar color-bg"></div>
-                            <div class="fill color-bg fill-2"></div>
-                            <div class="slice-item"></div>
-                        </div>
+                        <div class="number">78%</div>
+                        <div class="bar"></div>
+                        <div class="bar-rotate"></div>
+                        <div class="bar-circle"></div>
                     </div>
                     <h6 class="">CSS</h6>
                 </div>
                 <div class="col-3 col-md-6">
                     <div class="skill">
-                        <span class="skill-number">60%</span>
-                        <div class="slice">
-                            <div class="bar color-bg"></div>
-                            <div class="fill color-bg fill-3"></div>
-                            <div class="slice-item"></div>
-                        </div>
+                        <div class="number">65%</div>
+                        <div class="bar"></div>
+                        <div class="bar-rotate"></div>
+                        <div class="bar-circle"></div>
                     </div>
                     <h6 class="">Bootstrap</h6>
                 </div>
                 <div class="col-3 col-md-6">
                     <div class="skill">
-                        <span class="skill-number">66%</span>
-                        <div class="slice">
-                            <div class="bar color-bg"></div>
-                            <div class="fill color-bg fill-4"></div>
-                            <div class="slice-item"></div>
-                        </div>
-                    </div>
-                    <h6 class="">SASS</h6>
-                </div>
-                <div class="col-3 col-md-6">
-                    <div class="skill">
-                        <span class="skill-number">54%</span>
-                        <div class="slice">
-                            <div class="bar color-bg"></div>
-                            <div class="fill color-bg fill-5"></div>
-                            <div class="slice-item"></div>
-                        </div>
+                        <div class="number">70%</div>
+                        <div class="bar"></div>
+                        <div class="bar-rotate"></div>
+                        <div class="bar-circle"></div>
                     </div>
                     <h6 class="">JavaScript</h6>
                 </div>
                 <div class="col-3 col-md-6">
                     <div class="skill">
-                        <span class="skill-number">45%</span>
-                        <div class="slice">
-                            <div class="bar color-bg"></div>
-                            <div class="fill fill-6"></div>
-                            <div class="slice-item"></div>
-                        </div>
-                    </div>
-                    <h6 class="">jQuery</h6>
-                </div>
-                <div class="col-3 col-md-6">
-                    <div class="skill">
-                        <span class="skill-number">50%</span>
-                        <div class="slice">
-                            <div class="bar color-bg"></div>
-                            <div class="fill color-bg fill-7"></div>
-                            <div class="slice-item"></div>
-                        </div>
+                        <div class="number">80%</div>
+                        <div class="bar"></div>
+                        <div class="bar-rotate"></div>
+                        <div class="bar-circle"></div>
                     </div>
                     <h6 class="">React</h6>
                 </div>
                 <div class="col-3 col-md-6">
                     <div class="skill">
-                        <span class="skill-number">25%</span>
-                        <div class="slice">
-                            <div class="bar color-bg"></div>
-                            <div class="fill fill-8"></div>
-                            <div class="slice-item"></div>
-                        </div>
+                        <div class="number">75%</div>
+                        <div class="bar"></div>
+                        <div class="bar-rotate"></div>
+                        <div class="bar-circle"></div>
                     </div>
-                    <h6 class="">Redux</h6>
+                    <h6 class="">Node.js</h6>
+                </div>
+                <div class="col-3 col-md-6">
+                    <div class="skill">
+                        <div class="number">55%</div>
+                        <div class="bar"></div>
+                        <div class="bar-rotate"></div>
+                        <div class="bar-circle"></div>
+                    </div>
+                    <h6 class="">Express.js</h6>
+                </div>
+                <div class="col-3 col-md-6">
+                    <div class="skill">
+                        <div class="number">60%</div>
+                        <div class="bar"></div>
+                        <div class="bar-rotate"></div>
+                        <div class="bar-circle"></div>
+                    </div>
+                    <h6 class="">MongoDB</h6>
                 </div>
             </div>
+            <!--  -->
 
             <hr>
 
@@ -233,9 +219,138 @@
             </div>
         </div>
     </section>
+
+    <div class="container text-center my-5">
+        <h3>PERSONAL INFOS UPLOAD</h3>
+        <form action="{{url}}/admin/about/personal/update"  method="POST" enctype="multipart/form-data" class="text-center row">
+            <div class="form-group col-6 my-3">
+                <label for="firstName">FirstName</label>
+                <input 
+                    type="text"
+                    class="form-control bg-secondary" 
+                    id="firstName"
+                    value="{{AboutDB.personaInfo.firstName}}"
+                    name="firstName">
+            </div>
+            <div class="form-group col-6 my-3">
+                <label for="lastName">LastName</label>
+                <input 
+                    type="text"
+                    class="form-control bg-secondary" 
+                    id="lastName"
+                    value="{{AboutDB.personaInfo.lastName}}"
+                    name="lastName">
+            </div>
+            <div class="form-group col-6 my-3">
+                <label for="age">Age</label>
+                <input 
+                    type="number"
+                    class="form-control bg-secondary" 
+                    id="age"
+                    value="{{AboutDB.personaInfo.age}}"
+                    name="age">
+            </div>
+            <div class="form-group col-6 my-3">
+                <label for="national">National</label>
+                <input 
+                    type="text"
+                    class="form-control bg-secondary" 
+                    id="national"
+                    value="{{AboutDB.personaInfo.national}}"
+                    name="national">
+            </div>
+            <div class="form-group col-6 my-3">
+                <label for="freelance">Freelance</label>
+                <input 
+                    type="text"
+                    class="form-control bg-secondary" 
+                    id="freelance"
+                    value="{{AboutDB.personaInfo.freelance}}"
+                    name="freelance">
+            </div>
+            <div class="form-group col-6 my-3">
+                <label for="address">Address</label>
+                <input 
+                    type="text"
+                    class="form-control bg-secondary" 
+                    id="address"
+                    value="{{AboutDB.personaInfo.address}}"
+                    name="address">
+            </div>
+            <div class="form-group col-6 my-3">
+                <label for="phone">Phone</label>
+                <input 
+                    type="text"
+                    class="form-control bg-secondary" 
+                    id="phone"
+                    value="{{AboutDB.personaInfo.phone}}"
+                    name="phone">
+            </div>
+            <div class="form-group col-6 my-3">
+                <label for="email">Email</label>
+                <input 
+                    type="text"
+                    class="form-control bg-secondary" 
+                    id="email"
+                    value="{{AboutDB.personaInfo.email}}"
+                    name="email">
+            </div>
+            <div class="form-group col-6 my-3">
+                <label for="skype">Skype</label>
+                <input 
+                    type="text"
+                    class="form-control bg-secondary" 
+                    id="skype"
+                    value="{{AboutDB.personaInfo.skype}}"
+                    name="skype">
+            </div>
+            <div class="form-group col-6 my-3">
+                <label for="lang">lang</label>
+                <input 
+                    type="text"
+                    class="form-control bg-secondary" 
+                    id="lang"
+                    value="{{AboutDB.personaInfo.lang}}"
+                    name="lang">
+            </div>
+            <button type="submit" class="btn btn-primary m-auto">Update Text Page</button>
+        </form>
+
+        <div class="my-5">
+            <h3>PERSONAL CONTENT UPLOAD</h3>
+            <form action="{{url}}/admin/about/personal/update"  method="POST" enctype="multipart/form-data" class="text-center row">
+
+            {{#if AboutDB.personaContent}}
+                {{#each AboutDB.personaContent}}
+                <div class="form-group col-6 my-3">
+                    <label for="firstName">FirstName</label>
+                    <input 
+                        type="number"
+                        class="form-control bg-secondary" 
+                        id="firstName"
+                        value="{{num}}"
+                        name="firstName{{index}}">
+                </div>
+                <div class="form-group col-6 my-3">
+                    <label for="lastName">LastName</label>
+                    <input 
+                        type="text"
+                        class="form-control bg-secondary" 
+                        id="lastName"
+                        value="{{content}}"
+                        name="lastName">
+                </div>
+                {{/each}}
+            {{/if}}
+
+                <button type="submit" class="btn btn-primary m-auto">Update Text Page</button>
+            </form>
+        </div>
+    </div>
 </div>
 
 <script src="{{url}}/js/color.js" ></script>
+<script src="{{url}}/js/skills.js"></script>
 
 <script src="{{url}}/js/jquery-3.6.0.min.js"></script>
 <script src="{{url}}/js/switcher.js"></script>

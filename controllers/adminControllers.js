@@ -1,4 +1,5 @@
 const BlogPost = require('../model/blogModel')
+const Pages = require('../model/PagesModel')
 
 const getAdminPage = (req,res) => {
     res.render('admin/dash', {
@@ -8,67 +9,38 @@ const getAdminPage = (req,res) => {
     })
 }
 
-const getHomePage = (req,res) => {
+const getHomePage = async(req,res) => {
+    const homePage = await Pages.find().lean()
+
     res.render('admin/adminHome', {
         admin: 'admin',
         url: process.env.URL,
-        pageHome: 'home'
+        pageHome: 'home',
+        homeDB: homePage[0].homePage
     })
 }
 
-const getBlogPage = async(req,res) => {
-    const BlogDataDB = await BlogPost.find({}).lean()
+const putHomePage = async(req,res) => {
 
-    res.render('admin/adminBlog', {
-        admin: 'admin',
-        url: process.env.URL,
-        BlogData: BlogDataDB,
-        pageBlog: 'blog'
-    })
-}
+    const homePage = await Pages.find().lean()
 
-const getOneBlogPage = async(req,res) => {
-    const BlogDataDB = await BlogPost.findById(req.params.id).lean()
+    const id = homePage[0]._id
 
-    res.render('admin/adminOneBlog', {
-        admin: 'admin',
-        url: process.env.URL,
-        BlogPostDB: BlogDataDB, 
-        pageBlog: 'blog'
-    })
-}
-
-const putOneBlogPage = async(req,res) => {
-    const BlogDataDB = await BlogPost.findById(req.params.id).lean()
-
-    const {title, descr} = req.body
-
-    let NewBlogDataDB = {
-        title: title ? title : BlogDataDB.title,
-        descr: descr ? descr : BlogDataDB.descr,
-        image: Boolean(req.file) ? 'img/blog/' + req.file.filename : BlogDataDB.image
+    const newHomeDB = {
+        titleH3: req.body.titleh3 ? req.body.titleh3 : homePage[0].homePage.titleH3, 
+        titleH1: req.body.titleh1 ? req.body.titleh1 : homePage[0].homePage.titleH1, 
+        titleH1Color: req.body.titleh1color ? req.body.titleh1color : homePage[0].homePage.titleH1Color, 
+        button: req.body.button ? req.body.button : homePage[0].homePage.button, 
+        descr: req.body.descr ? req.body.descr : homePage[0].homePage.descr, 
+        image: Boolean(req.file) ? 'img/blog/' + req.file.filename : homePage[0].homePage.image
     }
 
-    await BlogPost.findByIdAndUpdate(req.params.id, NewBlogDataDB)
+    homePage[0].homePage = newHomeDB
 
-    res.redirect(`/admin/blog/${BlogDataDB._id}`)            
-}
+    await Pages.findByIdAndUpdate(id, homePage[0]) 
 
-const deleteOneBlogPage = async(req,res) => {
-    await BlogPost.findByIdAndDelete(req.params.id)
-    res.redirect('/admin/blog')
-}
 
-const postBlogPage = async(req,res) => {
-    const {title, descr} = req.body
-
-    await BlogPost.create({
-        title,
-        descr,
-        image:'img/blog/' + req.file.filename
-    })
-    
-    res.redirect('/admin/blog')  
+    res.redirect('/admin/home')
 }
 
 const getContactPage = async(req,res) => {
@@ -86,23 +58,12 @@ const getPortfolioPage = async(req,res) => {
     })
 }
 
-const getAboutPage = async(req,res) => {
-    res.render('admin/adminAbout', {
-        admin: 'admin',
-        url: process.env.URL,
-        pageAbout: 'about'
-    })
-}  
+  
 
 module.exports = {
     getAdminPage,
     getHomePage,
-    getBlogPage,
     getContactPage,
     getPortfolioPage,
-    getAboutPage,
-    postBlogPage,
-    getOneBlogPage,
-    putOneBlogPage,
-    deleteOneBlogPage
+    putHomePage
 }

@@ -4,21 +4,29 @@ const upload = require('../utils/fileUploads.js')
 const {
     getAdminPage,
     getHomePage,
-    getBlogPage,
     getContactPage,
     getPortfolioPage,
-    getAboutPage,
+    putHomePage
+} = require('../controllers/adminControllers')
+
+const {
+    getAboutPage
+} = require('../controllers/adminAboutControllers')
+
+const {
+    getBlogPage,
     postBlogPage,
     getOneBlogPage,
     putOneBlogPage,
-    deleteOneBlogPage
-} = require('../controllers/adminControllers')
+    deleteOneBlogPage,
+} = require('../controllers/adminBlogControllers')
 
 const router = Router()   
 
 // "/" => "url + /admin"
 router.get('/', getAdminPage)
 router.get('/home', getHomePage)
+router.post('/home', upload.single('image'), putHomePage)
 
 router.get('/blog', getBlogPage)
 router.post('/blog', upload.single('image'), postBlogPage)

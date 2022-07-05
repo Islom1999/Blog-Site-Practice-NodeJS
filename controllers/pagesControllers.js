@@ -1,8 +1,11 @@
 const BlogPost = require('../model/blogModel')
+const Pages = require('../model/PagesModel')
 
-const getHomePage = (req,res) => {
+const getHomePage = async(req,res) => {
+    const homePage = await Pages.find().lean()
     res.render('home', {
-        url: process.env.URL 
+        url: process.env.URL,
+        homeDB: homePage[0].homePage
     })
 }
 const getAboutPage = (req,res) => {

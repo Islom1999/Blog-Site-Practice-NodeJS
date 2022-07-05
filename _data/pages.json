@@ -1,0 +1,48 @@
+[
+    {
+        "homePage":{
+            "titleH3": "HI THERE !",
+            "titleH1": "I'm",
+            "titleH1Color": "STEVE MILNER",
+            "image": "img/img-mobile.jpg",
+            "descr": "I'm a Tunisian based web designer & front‑end developer focused on crafting clean & user‑friendly experiences, I am passionate about building excellent software that improves the lives of those around me.",
+            "button": "MORE ABOUT ME"
+        },
+        "aboutPage":{
+            "personaInfo": {
+                "firstName": "Islom",
+                "lastName": "Karimov",
+                "age": 23,
+                "national": "Tunisian",
+                "freelance": "Available",
+                "address": "Uzbekistan",
+                "phone": "+998972446972",
+                "email": "islomkarimovalisherovich@gmail.com",
+                "skype": "islom.karimov",
+                "lang": "Uzbek, Rus, English"
+            },
+            "personaContent": [
+                { 
+                    "index": 0,
+                    "num": 12, 
+                    "content": "YEARS OF EXPERIENCE"
+                },
+                { 
+                    "index": 1,
+                    "num": 97, 
+                    "content": "COMPLETED PROJECTS"
+                },
+                { 
+                    "index": 2,
+                    "num": 81, 
+                    "content": "HAPPY CUSTOMERS"
+                },
+                { 
+                    "index": 3,
+                    "num": 53, 
+                    "content": "AWARDS WON"
+                }
+            ]
+        }
+    }
+]

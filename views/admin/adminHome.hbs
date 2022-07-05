@@ -1,20 +1,80 @@
 <div class="content">
    <section class="section" style="z-index: 1000;">
-    <div class="color-bgr color-bg"></div>
-        <div class="parent">
-            <div class="col-5 col-lg-12">
-                <img src="{{url}}/img/img-mobile.jpg" class="" alt="my picture" />
-            </div>
-            <div class="col-7 col-lg-12 hi-there">
-                <h6 class="">hi there !</h6>
-                <h1 class="color-text"><span>I'm</span> steve milner</h1>
-                <p>I'm a Tunisian based web designer & front‑end developer focused on crafting clean & user‑friendly experiences, I am passionate about building excellent software that improves the lives of those around me.</p>
-                <a href="about.html" class="btn color-bg color-hover">more about me</a>
+        <div class="color-bgr color-bg"></div>
+            <div class="parent">
+                <div class="col-5 col-lg-12">
+                    <img src="{{url}}/{{homeDB.image}}" class="" alt="my picture" />
+                </div>
+                <div class="col-7 col-lg-12 hi-there">
+                    <h6 class="">{{homeDB.titleH3}}</h6>
+                    <h1 class="color-text"><span>{{homeDB.titleH1}}</span> {{homeDB.titleH1Color}}</h1>
+                    <p>{{homeDB.descr}}</p>
+                    <a href="about.html" class="btn color-bg color-hover">{{homeDB.button}}</a>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
+    <div class="container my-5">
+        <form action="{{url}}/admin/home"  method="POST" enctype="multipart/form-data" class="text-center">
+            <div class="form-group my-3">
+                <label for="title-h3">Title h3</label>
+                <input 
+                    type="text"
+                    class="form-control bg-secondary" 
+                    id="title-h3"
+                    value="{{homeDB.titleH3}}"
+                    name="titleh3">
+            </div>
+            <div class="form-group my-3">
+                <label for="titleh1">Title h1</label>
+                <input 
+                    type="text"
+                    class="form-control bg-secondary" 
+                    id="titleh1"
+                    value="{{homeDB.titleH1}}"
+                    name="titleh1">
+            </div>
+            <div class="form-group my-3">
+                <label for="title-h1-color">Title h1 color</label>
+                <input 
+                    type="text"
+                    class="form-control bg-secondary" 
+                    id="title-h1-color"
+                    value="{{homeDB.titleH1Color}}"
+                    name="titleh1color">
+            </div>
+            <div class="form-group my-3">
+                <label for="button">Button</label>
+                <input 
+                    type="text"
+                    class="form-control bg-secondary" 
+                    id="button"
+                    value="{{homeDB.button}}"
+                    name="button">
+            </div>
+            <div class="form-group my-3">
+                <label for="descr" class="d-block">Description Paragraph</label>
+                <textarea 
+                    type="password" 
+                    class="form-control bg-secondary" 
+                    id="descr"
+                    name="descr">{{homeDB.descr}}</textarea>
+            </div>
+        
+            <div class="form-group my-3">
+                <label for="image">Choose Image For Page : </label>
+                <input 
+                    type="file" 
+                    class="form-control-file bg-secondary" 
+                    id="image"
+                    name="image">
+                <label for="image">Rasm tanlang</label>
+            </div>
+
+            <button type="submit" class="btn btn-primary m-auto">Update Text Page</button>
+        </form>
+    </div>
 </div>
 <script src="{{url}}/js/color.js" ></script>
 
