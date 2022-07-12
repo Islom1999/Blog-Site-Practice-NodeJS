@@ -10,7 +10,9 @@ const {
 } = require('../controllers/adminControllers')
 
 const {
-    getAboutPage
+    getAboutPage,
+    updatePersonalUpdate,
+    updatePersonalContentUpdate
 } = require('../controllers/adminAboutControllers')
 
 const {
@@ -37,7 +39,11 @@ router.post('/blog/:id/delete', deleteOneBlogPage)
 
 router.get('/contact', getContactPage)
 router.get('/portfolio', getPortfolioPage)
+
 router.get('/about', getAboutPage)
+router.post('/about/personal/update', updatePersonalUpdate)
+router.post('/about/personal/content/update', updatePersonalContentUpdate)
+
 
 module.exports = router
 

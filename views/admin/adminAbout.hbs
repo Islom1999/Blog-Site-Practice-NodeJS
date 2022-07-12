@@ -17,11 +17,11 @@
                         </div>
                         <div class="col-6">
                             <ul class="about-list">
-                                <li> <span class="title">first name :</span> <span class="value">{{AboutDB.personaInfo.firstName}}</span> </li>
-                                <li> <span class="title">last name :</span> <span class="value">{{AboutDB.personaInfo.lastName}}</span> </li>
-                                <li> <span class="title">Age :</span> <span class="value">{{AboutDB.personaInfo.age}} Years</span> </li>
-                                <li> <span class="title">Nationality :</span> <span class="value">{{AboutDB.personaInfo.national}}</span> </li>
-                                <li> <span class="title">Freelance :</span> <span class="value">{{AboutDB.personaInfo.freelance}}</span> </li>
+                                <li><span class="title">first name :</span> <span class="value">{{AboutDB.personaInfo.firstName}}</span> </li>
+                                <li><span class="title">last name :</span> <span class="value">{{AboutDB.personaInfo.lastName}}</span> </li>
+                                <li><span class="title">Age :</span> <span class="value">{{AboutDB.personaInfo.age}} Years</span> </li>
+                                <li><span class="title">Nationality :</span> <span class="value">{{AboutDB.personaInfo.national}}</span> </li>
+                                <li><span class="title">Freelance :</span> <span class="value">{{AboutDB.personaInfo.freelance}}</span> </li>
                             </ul>
                         </div>
                         <div class="col-6">
@@ -40,30 +40,15 @@
                 </div>
                 <div class="col-6 col-lg-12">
                     <div class="parent">
+                        {{#each AboutDB.personaContent}}
                         <div class="col-6 col-sm-12">
                             <div class="box-stats">
-                                <h3 class="color-text">12</h3>
-                                <p class="">years of <span class="">experience</span></p>
+                                <h3 class="color-text">{{num}}</h3>
+                                <p class="personaContent">{{content}}</p>
                             </div>
                         </div>
-                        <div class="col-6 col-sm-12">
-                            <div class="box-stats">
-                                <h3 class="color-text">97</h3>
-                                <p class="">completed <span class="">projects</span></p>
-                            </div>
-                        </div>
-                        <div class="col-6 col-sm-12">
-                            <div class="box-stats">
-                                <h3 class="color-text">81</h3>
-                                <p class="">Happy <span class="">customers</span></p>
-                            </div>
-                        </div>
-                        <div class="col-6 col-sm-12">
-                            <div class="box-stats">
-                                <h3 class="color-text">53</h3>
-                                <p class="">awards <span class="">won</span></p>
-                            </div>
-                        </div>
+                        {{/each}}
+                        
                     </div>
                 </div>
             </div>
@@ -222,15 +207,16 @@
 
     <div class="container text-center my-5">
         <h3>PERSONAL INFOS UPLOAD</h3>
-        <form action="{{url}}/admin/about/personal/update"  method="POST" enctype="multipart/form-data" class="text-center row">
+        <form action="{{url}}/admin/about/personal/update"  method="POST"  class="text-center row">
             <div class="form-group col-6 my-3">
                 <label for="firstName">FirstName</label>
                 <input 
                     type="text"
                     class="form-control bg-secondary" 
                     id="firstName"
+                    name="firstName"
                     value="{{AboutDB.personaInfo.firstName}}"
-                    name="firstName">
+                    >
             </div>
             <div class="form-group col-6 my-3">
                 <label for="lastName">LastName</label>
@@ -318,27 +304,28 @@
 
         <div class="my-5">
             <h3>PERSONAL CONTENT UPLOAD</h3>
-            <form action="{{url}}/admin/about/personal/update"  method="POST" enctype="multipart/form-data" class="text-center row">
+            <form action="{{url}}/admin/about/personal/content/update"  method="POST" class="text-center row">
 
             {{#if AboutDB.personaContent}}
                 {{#each AboutDB.personaContent}}
                 <div class="form-group col-6 my-3">
-                    <label for="firstName">FirstName</label>
+                    <label for="firstName">Number</label>
                     <input 
                         type="number"
                         class="form-control bg-secondary" 
-                        id="firstName"
+                        id="number"
+                        name="num-{{index}}"
                         value="{{num}}"
-                        name="firstName{{index}}">
+                       >
                 </div>
                 <div class="form-group col-6 my-3">
-                    <label for="lastName">LastName</label>
+                    <label for="lastName">Content Text</label>
                     <input 
                         type="text"
                         class="form-control bg-secondary" 
-                        id="lastName"
+                        id="content"
                         value="{{content}}"
-                        name="lastName">
+                        name="content-{{index}}">
                 </div>
                 {{/each}}
             {{/if}}

@@ -40,8 +40,6 @@ const getBlogPostPage = async(req,res) => {
     })
 }
 
-
-
 module.exports = {
     getHomePage,
     getAboutPage,
