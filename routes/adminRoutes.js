@@ -6,7 +6,9 @@ const {
     getHomePage,
     getContactPage,
     getPortfolioPage,
-    putHomePage
+    putHomePage,
+    addPortfolioPage,
+    deletePortfolioPage
 } = require('../controllers/adminControllers')
 
 const {
@@ -42,7 +44,10 @@ router.post('/blog/:id', upload.single('image'), putOneBlogPage)
 router.post('/blog/:id/delete', deleteOneBlogPage)
 
 router.get('/contact', getContactPage)
+
 router.get('/portfolio', getPortfolioPage)
+router.post('/portfolio/add', upload.single('image'), addPortfolioPage)
+router.post('/portfolio/:id/delete', deletePortfolioPage)
 
 router.get('/about', getAboutPage)
 router.post('/about/personal/update', updatePersonalUpdate)

@@ -121,9 +121,45 @@
                         "descr": "Lorem ipsum dolor sit amet, consectetur tempor incididunt ut labore adipisicing elit,"
                     }
                 ]
+            }  
+        },
+        "portfolioPage":[ 
+            {
+                "image": "/img/projects/project-1.jpg",
+                "text": "IMAGE PROJECT"
+            },
+            {
+                "image": "/img/projects/project-2.jpg",
+                "text": "IMAGE PROJECT"
+            },
+            {
+                "image": "/img/projects/project-3.jpg",
+                "text": "IMAGE PROJECT"
+            },
+            {
+                "image": "/img/projects/project-4.jpg",
+                "text": "IMAGE PROJECT"
+            },
+            {
+                "image": "/img/projects/project-5.jpg",
+                "text": "IMAGE PROJECT"
+            },
+            {
+                "image": "/img/projects/project-6.jpg",
+                "text": "IMAGE PROJECT"
+            },
+            {
+                "image": "/img/projects/project-7.jpg",
+                "text": "IMAGE PROJECT"
+            },
+            {
+                "image": "/img/projects/project-8.jpg",
+                "text": "IMAGE PROJECT"
+            },
+            {
+                "image": "/img/projects/project-9.jpg",
+                "text": "IMAGE PROJECT"
             }
-            
-            
-        }
+    ]
     }
 ]

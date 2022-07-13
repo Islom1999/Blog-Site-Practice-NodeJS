@@ -99,8 +99,14 @@ const PagesModel = new mongoose.Schema({
                     descr: {type: 'string', required: true}
                 }
             ]
+        },
+    },
+    portfolioPage:[ 
+        {
+            image: {type: 'string', required: true},
+            text: {type: 'string', required: true},
         }
-    }
+    ]
 })
 
 module.exports = mongoose.model('Pages', PagesModel)

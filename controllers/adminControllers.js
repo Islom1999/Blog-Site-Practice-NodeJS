@@ -1,4 +1,4 @@
-const BlogPost = require('../model/blogModel')
+
 const Pages = require('../model/PagesModel')
 
 const getAdminPage = (req,res) => {
@@ -42,7 +42,7 @@ const putHomePage = async(req,res) => {
 
     res.redirect('/admin/home')
 }
-
+ 
 const getContactPage = async(req,res) => {
     res.render('admin/adminContact', {
         admin: 'admin',
@@ -51,19 +51,48 @@ const getContactPage = async(req,res) => {
     })
 }
 const getPortfolioPage = async(req,res) => {
+
+    const PagesDB = await Pages.find().lean()
+
     res.render('admin/adminPortfolio', {
         admin: 'admin',
         url: process.env.URL,
-        pagePortfolio: 'portfolio'
+        pagePortfolio: 'portfolio',
+        PagesDB: PagesDB[0].portfolioPage
     })
 }
+const addPortfolioPage = async(req,res) => {
 
+    const PagesDB = await Pages.find().lean()
   
+    PagesDB[0].portfolioPage.push({
+        text: req.body.text,
+        image:  '/img/blog/' + req.file.filename
+    })
+
+    await Pages.findByIdAndUpdate(PagesDB[0]._id, PagesDB[0])
+
+    res.redirect('/admin/portfolio')
+}
+
+const deletePortfolioPage = async(req,res) => {
+
+    const PagesDB = await Pages.find().lean()
+  
+    PagesDB[0].portfolioPage = PagesDB[0].portfolioPage.filter(elem => req.params.id != elem._id)
+
+    await Pages.findByIdAndUpdate(PagesDB[0]._id, PagesDB[0])
+
+    res.redirect('/admin/portfolio')
+}
+
 
 module.exports = {
     getAdminPage,
     getHomePage,
     getContactPage,
     getPortfolioPage,
-    putHomePage
+    putHomePage,
+    addPortfolioPage,
+    deletePortfolioPage
 }

@@ -8,9 +8,11 @@ const getHomePage = async(req,res) => {
         homeDB: homePage[0].homePage
     })
 }
-const getAboutPage = (req,res) => {
+const getAboutPage = async(req,res) => {
+    const AboutDB = await Pages.find().lean()
     res.render('about', {
-        url: process.env.URL 
+        url: process.env.URL,
+        AboutDB: AboutDB[0].aboutPage
     })
 }
 const getContactPage = (req,res) => {
@@ -18,9 +20,11 @@ const getContactPage = (req,res) => {
         url: process.env.URL 
     })
 }
-const getPortfolioPage = (req,res) => {
+const getPortfolioPage = async(req,res) => {
+    const PagesDB = await Pages.find().lean()
     res.render('portfolio', {
-        url: process.env.URL  
+        url: process.env.URL,
+        PagesDB: PagesDB[0].portfolioPage
     })
 }
 const getBlogPage = async(req,res) => {

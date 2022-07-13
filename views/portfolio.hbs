@@ -8,69 +8,15 @@
     <div id="grid-gallery" class="container">
         <section class="grid-wrap">
             <ul class="parent-grid">
-                <li>
-                    <figure class="snake">
-                        <img src="img/projects/project-1.jpg" alt="Portolio Image" />
-                        <div class="overlay color-bg"><span>Image Project</span></div>
-                    </figure>
-                </li>
-                
-                <li>
-                    <figure class="snake">
-                        <img src="img/projects/project-2.jpg" alt="Portolio Image" />
-                        <div class="overlay color-bg"><span>Youtube Project</span></div>
-                    </figure>
-                </li>
-                
-                <li>
-                    <figure class="snake">
-                        <img src="img/projects/project-3.jpg" alt="Portolio Image" />
-                        <div class="overlay color-bg"><span>Slider Project</span></div>
-                    </figure>
-                </li>
-        
-                <li>
-                    <figure class="snake">
-                        <img src="img/projects/project-4.jpg" alt="Portolio Image" />
-                        <div class="overlay color-bg"><span>Local Video Project</span></div>
-                    </figure>
-                </li>
-    
-                <li>
-                    <figure class="snake">
-                        <img src="img/projects/project-5.jpg" alt="Portolio Image" />
-                        <div class="overlay color-bg"><span>Image Project</span></div>
-                    </figure>
-                </li>
-        
-                <li>
-                    <figure class="snake">
-                        <img src="img/projects/project-6.jpg" alt="Portolio Image" />
-                        <div class="overlay color-bg"><span>Image Project</span></div>
-                    </figure>
-                </li>
-            
-                <li>
-                    <figure class="snake">
-                        <img src="img/projects/project-7.jpg" alt="Portolio Image" />
-                        <div class="overlay color-bg"><span>Image Project</span></div>
-                    </figure>
-                </li>
-            
-                <li>
-                    <figure class="snake">
-                        <img src="img/projects/project-8.jpg" alt="Portolio Image" />
-                        <div class="overlay color-bg"><span>Image Project</span></div>
-                    </figure>
-                </li>
-                
-                <li>
-                    <figure class="snake">
-                        <img src="img/projects/project-9.jpg" alt="Portolio Image" />
-                        <div class="overlay color-bg"><span>Image Project</span></div>
-                    </figure>
-                </li>
-            </ul>
+            {{#each PagesDB}}
+            <li>
+                <figure class="snake">
+                    <img src="{{url}}{{image}}" alt="Portolio Image" />
+                    <div class="overlay color-bg"><span>{{text}}</span></div>
+                </figure>
+            </li>
+            {{/each}}
+        </ul>
         </section>
     </div>
 </section>
