@@ -60,6 +60,26 @@ const updatePersonalContentUpdate = async(req,res) => {
             }
         } )
 
+        await Pages.findByIdAndUpdate(id, AboutDB[0]) 
+    
+        res.redirect('/admin/about')
+
+    }catch(err){
+        console.log(err)
+    }
+}
+
+const addSkillsAboutPage = async(req,res) => {
+    try{
+        const AboutDB = await Pages.find().lean()
+
+        const id = AboutDB[0]._id
+
+        AboutDB[0].aboutPage.skills.push({
+            index: AboutDB[0].aboutPage.skills.length,
+            number: req.body.number,
+            content: req.body.text
+        })
 
         await Pages.findByIdAndUpdate(id, AboutDB[0]) 
     
@@ -70,10 +90,76 @@ const updatePersonalContentUpdate = async(req,res) => {
     }
 }
 
+const deleteSkillsAboutPage = async(req,res) => {
+    try{
+        const AboutDB = await Pages.find().lean()
+
+        const id = AboutDB[0]._id
+
+        AboutDB[0].aboutPage.skills = AboutDB[0].aboutPage.skills.filter(elem => elem._id != req.params.id)
+
+        await Pages.findByIdAndUpdate(id, AboutDB[0]) 
+    
+        res.redirect('/admin/about')
+
+    }catch(err){
+        console.log(err)
+    }
+}
+
+const addPracticeAboutPage = async(req,res) => {
+    try{
+        const AboutDB = await Pages.find().lean()
+
+        if(req.body.select = "education"){
+            AboutDB[0].aboutPage.practice.education.push({
+                date: req.body.date,
+                title: req.body.title,
+                descr: req.body.descr
+            })
+        }else{
+            AboutDB[0].aboutPage.practice.experiense.push({
+                date: req.body.date,
+                title: req.body.title,
+                descr: req.body.descr
+            })
+        }
+        
+        await Pages.findByIdAndUpdate(AboutDB[0]._id, AboutDB[0]) 
+    
+        res.redirect('/admin/about')
+
+    }catch(err){
+        console.log(err)
+    }
+}
+
+const deletePracticeAboutPage = async(req,res) => {
+    try{
+        const AboutDB = await Pages.find().lean()
+
+        if(req.body.type = "education"){
+            AboutDB[0].aboutPage.practice.education = AboutDB[0].aboutPage.practice.education.filter(elem => elem._id != req.params.id)
+        }else{
+            AboutDB[0].aboutPage.practice.experiense = AboutDB[0].aboutPage.practice.experiense.filter(elem => elem._id != req.params.id)
+        }
+        
+        await Pages.findByIdAndUpdate(AboutDB[0]._id, AboutDB[0]) 
+    
+        res.redirect('/admin/about')
+
+    }catch(err){
+        console.log(err)
+    }
+}
 
 
 module.exports = {
     getAboutPage,
     updatePersonalUpdate,
-    updatePersonalContentUpdate
+    updatePersonalContentUpdate,
+    addSkillsAboutPage,
+    deleteSkillsAboutPage,
+    addPracticeAboutPage,
+    deletePracticeAboutPage
 }

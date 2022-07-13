@@ -12,7 +12,11 @@ const {
 const {
     getAboutPage,
     updatePersonalUpdate,
-    updatePersonalContentUpdate
+    updatePersonalContentUpdate,
+    addSkillsAboutPage,
+    deleteSkillsAboutPage,
+    addPracticeAboutPage,
+    deletePracticeAboutPage
 } = require('../controllers/adminAboutControllers')
 
 const {
@@ -43,6 +47,10 @@ router.get('/portfolio', getPortfolioPage)
 router.get('/about', getAboutPage)
 router.post('/about/personal/update', updatePersonalUpdate)
 router.post('/about/personal/content/update', updatePersonalContentUpdate)
+router.post('/about/skills/add', addSkillsAboutPage)
+router.post('/about/skills/:id/delete', deleteSkillsAboutPage)
+router.post('/about/practice/add', addPracticeAboutPage)
+router.post('/about/practice/:id/delete', deletePracticeAboutPage)
 
 
 module.exports = router

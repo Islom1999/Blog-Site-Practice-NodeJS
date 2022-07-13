@@ -75,8 +75,31 @@ const PagesModel = new mongoose.Schema({
                 index: {type: 'number', required: true,},
                 num: {type: 'number', required: true,}, 
                 content: {type: 'string', required: true,}
+            },
+        ],
+        skills: [
+            { 
+                index: {type: 'number', required: true},
+                number: {type: 'string', required: true}, 
+                content: {type: 'string', required: true}
             }
-        ]
+        ],
+        practice: {
+            experiense: [
+                {
+                date: {type: 'string', required: true},
+                title: {type: 'string', required: true}, 
+                descr: {type: 'string', required: true}
+                }
+            ],
+            education: [
+                {
+                    date: {type: 'string', required: true},
+                    title: {type: 'string', required: true}, 
+                    descr: {type: 'string', required: true}
+                }
+            ]
+        }
     }
 })
 

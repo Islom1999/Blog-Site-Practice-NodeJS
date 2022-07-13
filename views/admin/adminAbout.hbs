@@ -60,78 +60,21 @@
                 <div class="col-12">
                     <h3 class="my-skills">My Skills</h3>
                 </div>
+
+                {{#each AboutDB.skills}}
                 <div class="col-3 col-md-6">
                     <div class="skill">
-                        <div class="number">75%</div>
+                        <div class="number">{{number}}</div>
                         <div class="bar"></div>
                         <div class="bar-rotate"></div>
                         <div class="bar-circle"></div>
                     </div>
-                    <h6 class="">HTML</h6>
+                    <h6 class="">{{content}}</h6>
+                    <form action="{{url}}/admin/about/skills/{{_id}}/delete" method="POST" class="text-center">
+                        <button type="submit" class="btn btn-sm btn-primary m-auto mt-3">Delete</button>
+                    </form>
                 </div>
-                <div class="col-3 col-md-6">
-                    <div class="skill">
-                        <div class="number">78%</div>
-                        <div class="bar"></div>
-                        <div class="bar-rotate"></div>
-                        <div class="bar-circle"></div>
-                    </div>
-                    <h6 class="">CSS</h6>
-                </div>
-                <div class="col-3 col-md-6">
-                    <div class="skill">
-                        <div class="number">65%</div>
-                        <div class="bar"></div>
-                        <div class="bar-rotate"></div>
-                        <div class="bar-circle"></div>
-                    </div>
-                    <h6 class="">Bootstrap</h6>
-                </div>
-                <div class="col-3 col-md-6">
-                    <div class="skill">
-                        <div class="number">70%</div>
-                        <div class="bar"></div>
-                        <div class="bar-rotate"></div>
-                        <div class="bar-circle"></div>
-                    </div>
-                    <h6 class="">JavaScript</h6>
-                </div>
-                <div class="col-3 col-md-6">
-                    <div class="skill">
-                        <div class="number">80%</div>
-                        <div class="bar"></div>
-                        <div class="bar-rotate"></div>
-                        <div class="bar-circle"></div>
-                    </div>
-                    <h6 class="">React</h6>
-                </div>
-                <div class="col-3 col-md-6">
-                    <div class="skill">
-                        <div class="number">75%</div>
-                        <div class="bar"></div>
-                        <div class="bar-rotate"></div>
-                        <div class="bar-circle"></div>
-                    </div>
-                    <h6 class="">Node.js</h6>
-                </div>
-                <div class="col-3 col-md-6">
-                    <div class="skill">
-                        <div class="number">55%</div>
-                        <div class="bar"></div>
-                        <div class="bar-rotate"></div>
-                        <div class="bar-circle"></div>
-                    </div>
-                    <h6 class="">Express.js</h6>
-                </div>
-                <div class="col-3 col-md-6">
-                    <div class="skill">
-                        <div class="number">60%</div>
-                        <div class="bar"></div>
-                        <div class="bar-rotate"></div>
-                        <div class="bar-circle"></div>
-                    </div>
-                    <h6 class="">MongoDB</h6>
-                </div>
+                {{/each}}
             </div>
             <!--  -->
 
@@ -144,60 +87,41 @@
                 <div class="col-6 col-lg-12">
                     <div class="resume-box">
                         <ul>
+                            {{#each AboutDB.practice.experiense}}
                             <li>
                                 <div class="icon color-bg">
                                     <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="graduation-cap" class="svg-inline--fa fa-graduation-cap fa-w-20" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M622.34 153.2L343.4 67.5c-15.2-4.67-31.6-4.67-46.79 0L17.66 153.2c-23.54 7.23-23.54 38.36 0 45.59l48.63 14.94c-10.67 13.19-17.23 29.28-17.88 46.9C38.78 266.15 32 276.11 32 288c0 10.78 5.68 19.85 13.86 25.65L20.33 428.53C18.11 438.52 25.71 448 35.94 448h56.11c10.24 0 17.84-9.48 15.62-19.47L82.14 313.65C90.32 307.85 96 298.78 96 288c0-11.57-6.47-21.25-15.66-26.87.76-15.02 8.44-28.3 20.69-36.72L296.6 284.5c9.06 2.78 26.44 6.25 46.79 0l278.95-85.7c23.55-7.24 23.55-38.36 0-45.6zM352.79 315.09c-28.53 8.76-52.84 3.92-65.59 0l-145.02-44.55L128 384c0 35.35 85.96 64 192 64s192-28.65 192-64l-14.18-113.47-145.03 44.56z"></path></svg>
                                 </div>
-                                <span class="time">2018 - Present</span>
-                                <h5>Web Developer <span class="place">Envato</span></h5>
-                                <p>Lorem ipsum dolor sit amet, consectetur tempor incididunt ut labore adipisicing elit, </p>
+                                <span class="time">{{date}}</span>
+                                <h5>{{title}}</h5>
+                                <p>{{descr}}</p>
+                                <form action="/admin/about/practice/{{_id}}/delete" class="text-center" method="POST">
+                                    <button class="btn btn-info">delete</button>
+                                    <input class="d-none" type="text" name="type" value="experiense">
+                                </form>
                             </li>
-                            <li>
-                                <div class="icon color-bg">
-                                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="graduation-cap" class="svg-inline--fa fa-graduation-cap fa-w-20" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M622.34 153.2L343.4 67.5c-15.2-4.67-31.6-4.67-46.79 0L17.66 153.2c-23.54 7.23-23.54 38.36 0 45.59l48.63 14.94c-10.67 13.19-17.23 29.28-17.88 46.9C38.78 266.15 32 276.11 32 288c0 10.78 5.68 19.85 13.86 25.65L20.33 428.53C18.11 438.52 25.71 448 35.94 448h56.11c10.24 0 17.84-9.48 15.62-19.47L82.14 313.65C90.32 307.85 96 298.78 96 288c0-11.57-6.47-21.25-15.66-26.87.76-15.02 8.44-28.3 20.69-36.72L296.6 284.5c9.06 2.78 26.44 6.25 46.79 0l278.95-85.7c23.55-7.24 23.55-38.36 0-45.6zM352.79 315.09c-28.53 8.76-52.84 3.92-65.59 0l-145.02-44.55L128 384c0 35.35 85.96 64 192 64s192-28.65 192-64l-14.18-113.47-145.03 44.56z"></path></svg>
-                                </div>
-                                <span class="time">2013 - 2018</span>
-                                <h5 class="">UI/UX Designer <span class="place">Themeforest</span></h5>
-                                <p class="">Lorem incididunt dolor sit amet, consectetur eiusmod dunt doldunt dol elit, tempor incididunt</p>
-                            </li>
-                            <li>
-                                <div class="icon color-bg">
-                                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="graduation-cap" class="svg-inline--fa fa-graduation-cap fa-w-20" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M622.34 153.2L343.4 67.5c-15.2-4.67-31.6-4.67-46.79 0L17.66 153.2c-23.54 7.23-23.54 38.36 0 45.59l48.63 14.94c-10.67 13.19-17.23 29.28-17.88 46.9C38.78 266.15 32 276.11 32 288c0 10.78 5.68 19.85 13.86 25.65L20.33 428.53C18.11 438.52 25.71 448 35.94 448h56.11c10.24 0 17.84-9.48 15.62-19.47L82.14 313.65C90.32 307.85 96 298.78 96 288c0-11.57-6.47-21.25-15.66-26.87.76-15.02 8.44-28.3 20.69-36.72L296.6 284.5c9.06 2.78 26.44 6.25 46.79 0l278.95-85.7c23.55-7.24 23.55-38.36 0-45.6zM352.79 315.09c-28.53 8.76-52.84 3.92-65.59 0l-145.02-44.55L128 384c0 35.35 85.96 64 192 64s192-28.65 192-64l-14.18-113.47-145.03 44.56z"></path></svg>
-                                </div>
-                                <span class="time">2005 - 2013</span>
-                                <h5 class="">Consultant <span class="place">Videohive</span></h5>
-                                <p class="">Lorem ipsum dolor sit amet, tempor incididunt ut laboreconsectetur elit, sed do eiusmod tempor duntt</p>
-                            </li>
+                            {{/each}}
                         </ul>
                     </div>
                 </div>
+                
                 <div class="col-6 col-lg-12">
                     <div class="resume-box">
                         <ul>
+                            {{#each AboutDB.practice.education}}
                             <li>
                                 <div class="icon color-bg">
                                     <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="briefcase" class="svg-inline--fa fa-briefcase fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M320 336c0 8.84-7.16 16-16 16h-96c-8.84 0-16-7.16-16-16v-48H0v144c0 25.6 22.4 48 48 48h416c25.6 0 48-22.4 48-48V288H320v48zm144-208h-80V80c0-25.6-22.4-48-48-48H176c-25.6 0-48 22.4-48 48v48H48c-25.6 0-48 22.4-48 48v80h512v-80c0-25.6-22.4-48-48-48zm-144 0H192V96h128v32z"></path></svg>
                                 </div>
-                                <span class="time">2015</span>
-                                <h5 class="">Engineering Degree <span class="place">Oxford University</span></h5>
-                                <p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do tempor incididunt ut labore</p>
+                                <span class="time">{{date}}</span>
+                                <h5 class="">{{title}}</h5>
+                                <p class="">{{descr}}</p>
+                                <form action="/admin/about/practice/{{_id}}/delete" class="text-center" method="POST">
+                                    <button class="btn btn-info">delete</button>
+                                    <input class="d-none" type="text" name="type" value="education">
+                                </form>
                             </li>
-                            <li>
-                                <div class="icon color-bg">
-                                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="briefcase" class="svg-inline--fa fa-briefcase fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M320 336c0 8.84-7.16 16-16 16h-96c-8.84 0-16-7.16-16-16v-48H0v144c0 25.6 22.4 48 48 48h416c25.6 0 48-22.4 48-48V288H320v48zm144-208h-80V80c0-25.6-22.4-48-48-48H176c-25.6 0-48 22.4-48 48v48H48c-25.6 0-48 22.4-48 48v80h512v-80c0-25.6-22.4-48-48-48zm-144 0H192V96h128v32z"></path></svg>
-                                </div>
-                                <span class="time">2012</span>
-                                <h5 class="">Master Degree <span class="place">Kiev University</span></h5>
-                                <p class="">Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor incididunt ut adipisicing</p>
-                            </li>
-                            <li>
-                                <div class="icon color-bg">
-                                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="briefcase" class="svg-inline--fa fa-briefcase fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M320 336c0 8.84-7.16 16-16 16h-96c-8.84 0-16-7.16-16-16v-48H0v144c0 25.6 22.4 48 48 48h416c25.6 0 48-22.4 48-48V288H320v48zm144-208h-80V80c0-25.6-22.4-48-48-48H176c-25.6 0-48 22.4-48 48v48H48c-25.6 0-48 22.4-48 48v80h512v-80c0-25.6-22.4-48-48-48zm-144 0H192V96h128v32z"></path></svg>
-                                </div>
-                                <span class="time">2009</span>
-                                <h5 class="">Bachelor Degree <span class="place">Tunis High School</span></h5>
-                                <p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor ut labore</p>
-                            </li>
+                            {{/each}}
                         </ul>
                     </div>
                 </div>
@@ -331,6 +255,81 @@
             {{/if}}
 
                 <button type="submit" class="btn btn-primary m-auto">Update Text Page</button>
+            </form>
+        </div>
+
+        <div class="my-5">
+            <h3>MY SKILLS ADD</h3>
+            <form action="{{url}}/admin/about/skills/add"  method="POST" class="text-center row">
+
+                <div class="form-group col-6 my-3">
+                <label for="number">Skills Number Foiz</label>
+                <input 
+                    type="text"
+                    class="form-control bg-secondary" 
+                    id="number"
+                    name="number"
+                    value=""
+                    placeholder="50%"
+                    >
+                </div>
+                <div class="form-group col-6 my-3">
+                <label for="firstName">Skills Text</label>
+                <input 
+                    type="text"
+                    class="form-control bg-secondary" 
+                    id="firstName"
+                    name="text"
+                    value=""
+                    placeholder="CSS">
+                </div>
+                <button type="submit" class="btn btn-primary m-auto">Add Skills</button>
+            </form>
+        </div>
+
+        <div class="my-5">
+            <h3>EXPERIENCE & EDUCATION</h3>
+            <form action="{{url}}/admin/about/practice/add"  method="POST" class="text-center row">
+                <div class="form-group col-12 my-3">
+                <label for="select" class="col-12">EXPERIENCE & EDUCATION SELECT</label>
+                <select class="my-3" id="select" name="select">
+                    <option value="experiense" selected>Experiense</option>
+                    <option value="education">Education</option>
+                </select>
+                </div>
+                <div class="form-group col-6 my-3">
+                <label for="date">Dates</label>
+                <input 
+                    type="text"
+                    class="form-control bg-secondary" 
+                    id="date"
+                    name="date"
+                    value=""
+                    placeholder="2018 - Present"
+                    >
+                </div>
+                <div class="form-group col-6 my-3">
+                <label for="title">WEB DEVELOPER ENVATO</label>
+                <input 
+                    type="text"
+                    class="form-control bg-secondary" 
+                    id="title"
+                    name="title"
+                    value=""
+                    placeholder="WEB DEVELOPER ENVATO">
+                </div>
+
+                <div class="form-group col-12 my-3">
+                <label for="descr">Description Text</label>
+                <textarea 
+                    class="form-control bg-secondary" 
+                    id="descr"
+                    name="descr"
+                    value=""
+                    placeholder="Enter Description"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary m-auto">Add Skills</button>
             </form>
         </div>
     </div>

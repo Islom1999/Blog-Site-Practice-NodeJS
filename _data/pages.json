@@ -42,7 +42,88 @@
                     "num": 53, 
                     "content": "AWARDS WON"
                 }
-            ]
+            ],
+            "skills": [
+                {
+                    "index": 0,
+                    "number": "75%",
+                    "content": "HTML"
+                },
+                {
+                    "index": 1,
+                    "number": "78%",
+                    "content": "CSS"
+                },
+                {
+                    "index": 2,
+                    "number": "65%",
+                    "content": "Bootstrap"
+                },
+                {
+                    "index": 3,
+                    "number": "70%",
+                    "content": "Javascript"
+                },
+                {
+                    "index": 4,
+                    "number": "80%",
+                    "content": "React"
+                },
+                {
+                    "index": 5,
+                    "number": "75%",
+                    "content": "Node.js"
+                },
+                {
+                    "index": 6,
+                    "number": "55%",
+                    "content": "Express.js"
+                },
+                {
+                    "index": 7,
+                    "number": "60%",
+                    "content": "MongoDb"
+                }
+            ],
+            "practice": {
+                "experiense":[
+                    {
+                        "date": "2018 - Present",
+                        "title": "WEB DEVELOPER ENVATO", 
+                        "descr": "Lorem ipsum dolor sit amet, consectetur tempor incididunt ut labore adipisicing elit,"
+                    },
+                    {
+                        "date": "2005 - 2013",
+                        "title": "CONSULTANT VIDEOHIVE", 
+                        "descr": "Lorem ipsum dolor sit amet, consectetur tempor incididunt ut labore adipisicing elit,"
+                    },
+                    
+                    {
+                        "date": "2013 - 2018",
+                        "title": "UI/UX DESIGNER THEMEFOREST", 
+                        "descr": "Lorem ipsum dolor sit amet, consectetur tempor incididunt ut labore adipisicing elit,"
+                    }
+                ],
+                "education": [
+                    {
+                        "date": "2012",
+                        "title": "MASTER DEGREE KIEV UNIVERSITY", 
+                        "descr": "Lorem ipsum dolor sit amet, consectetur tempor incididunt ut labore adipisicing elit,"
+                    },
+                    {
+                        "date": "2015",
+                        "title": "ENGINEERING DEGREE OXFORD UNIVERSITY", 
+                        "descr": "Lorem ipsum dolor sit amet, consectetur tempor incididunt ut labore adipisicing elit,"
+                    },
+                    {
+                        "date": "2009",
+                        "title": "BACHELOR DEGREE TUNIS HIGH SCHOOL", 
+                        "descr": "Lorem ipsum dolor sit amet, consectetur tempor incididunt ut labore adipisicing elit,"
+                    }
+                ]
+            }
+            
+            
         }
     }
 ]
